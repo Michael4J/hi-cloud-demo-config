@@ -1,16 +1,4 @@
 # 生产环境
-# ================= Eureka Client =================
-eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: true   # 客户端在注册时就会使用自己的ip地址而不是主机名
-    lease-renewal-interval-in-seconds: 10   # 加速心跳，默认30秒
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    health-check-url-path: /actuator/health
-  client:
-    registry-fetch-interval-seconds: 5   # client隔多久去拉取服务注册信息，默认为30秒，zuul需要将该时间缩短以便迅速获取其他服务信息
-    serviceUrl:
-      defaultZone: http://127.0.0.1:9001/eureka/   # eureka服务器地址  集群使用,隔开
 zuul:
   prefix: /api   # 路由前缀
   strip-prefix: true   # 代理前缀默认会从请求路径中移除
