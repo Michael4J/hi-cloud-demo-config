@@ -25,3 +25,5 @@ zuul:
       path: /order/**
       service-id: hi-ms-order
 
+test: 
+  config: test
